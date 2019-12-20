@@ -1,5 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/header.css": "/css/header.css"
+    "/css/SP/header.css": "/css/SP/header.css",
+    "/css/SP/top.css": "/css/SP/top.css",
+    "/css/PC/header.css": "/css/PC/header.css",
+    "/js/navbar.js": "/js/navbar.js"
 }
