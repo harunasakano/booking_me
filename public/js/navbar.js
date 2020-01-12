@@ -10740,6 +10740,7 @@ $(document).ready(function () {
   $('#nav-toggle').on('click', function () {
     $('body').toggleClass('open');
     $(this).hide();
+    $('.container').remove();
   });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))

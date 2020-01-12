@@ -24,6 +24,7 @@
     <link href="{{ asset('css/PC/header.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/SP/top.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/PC/top.css') }}" rel="stylesheet">
 </head>
 @include('layouts.header')
 @yield('content')

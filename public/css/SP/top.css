@@ -9,16 +9,12 @@ body {
   padding-top: 20vw;
 }
 
-.h1 {
-  display: inline;
+.top_text h1 {
+  font-size: 3em;
+  font-family: Impact;
 }
 
 .top_content {
   padding: 1px;
-}
-
-.top_text {
-  font-size: 24px;
-  font-family: Impact;
 }
 

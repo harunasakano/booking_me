@@ -49499,6 +49499,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/PC/top.scss":
+/*!************************************!*\
+  !*** ./resources/sass/PC/top.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/SP/header.scss":
 /*!***************************************!*\
   !*** ./resources/sass/SP/header.scss ***!
@@ -49533,9 +49544,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/SP/header.scss ./resources/sass/SP/top.scss ./resources/sass/PC/header.scss ***!
-  \**********************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/SP/header.scss ./resources/sass/SP/top.scss ./resources/sass/PC/header.scss ./resources/sass/PC/top.scss ***!
+  \***************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49543,7 +49554,8 @@ __webpack_require__(/*! /Users/sakanoharuna/ChApp/ChApp/ChApp/resources/js/app.j
 __webpack_require__(/*! /Users/sakanoharuna/ChApp/ChApp/ChApp/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /Users/sakanoharuna/ChApp/ChApp/ChApp/resources/sass/SP/header.scss */"./resources/sass/SP/header.scss");
 __webpack_require__(/*! /Users/sakanoharuna/ChApp/ChApp/ChApp/resources/sass/SP/top.scss */"./resources/sass/SP/top.scss");
-module.exports = __webpack_require__(/*! /Users/sakanoharuna/ChApp/ChApp/ChApp/resources/sass/PC/header.scss */"./resources/sass/PC/header.scss");
+__webpack_require__(/*! /Users/sakanoharuna/ChApp/ChApp/ChApp/resources/sass/PC/header.scss */"./resources/sass/PC/header.scss");
+module.exports = __webpack_require__(/*! /Users/sakanoharuna/ChApp/ChApp/ChApp/resources/sass/PC/top.scss */"./resources/sass/PC/top.scss");
 
 
 /***/ })

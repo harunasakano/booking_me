@@ -22,3 +22,4 @@ mix.sass('resources/sass/SP/top.scss', 'public/css/SP');
 
 /* PC用のCSS */
 mix.sass('resources/sass/PC/header.scss', 'public/css/PC');
+mix.sass('resources/sass/PC/top.scss', 'public/css/PC');

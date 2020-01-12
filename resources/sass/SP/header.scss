@@ -12,10 +12,9 @@ header {
 #global-nav {
     background-color: #ffffff;
     position: fixed;
-    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    top: 20vw;
     z-index: 990;
     text-align: center;
     display: flex;
@@ -80,4 +79,3 @@ li.menu_list {
 #nav-toggle div:nth-of-type(3) {
     bottom: 0;
 }
-
