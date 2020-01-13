@@ -5,6 +5,17 @@
 
     body {
         margin: 0;
+        &.open{
+            .container{
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+    }
+
+    .open {
+        transition-duration: 1s;
+        background-color: #FF1747;
     }
 
     .container {

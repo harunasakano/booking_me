@@ -4,8 +4,7 @@ $(document).ready(function () {
 
     $('#nav-toggle').on('click', function () {
         $('body').toggleClass('open');
-        $(this).hide();
-        $('.container').remove();
+        $(this).addClass('open');
     });
 });
 
