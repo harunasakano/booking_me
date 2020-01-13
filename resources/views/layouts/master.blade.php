@@ -20,11 +20,7 @@
     <!-- Styles -->
 {{--  <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
 <!-- Styles -->
-    <link href="{{ asset('css/SP/header.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/PC/header.css') }}" rel="stylesheet">
-
-    <link href="{{ asset('css/SP/top.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/PC/top.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/top.css') }}" rel="stylesheet">
 </head>
 @include('layouts.header')
 @yield('content')

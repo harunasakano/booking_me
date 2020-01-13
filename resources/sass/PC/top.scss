@@ -1,34 +1,62 @@
-/* top-page css SP */
+/* top-page css PC */
 
 @media screen and (min-width: 767px) /*ウィンドウ幅が767px以上の場合に適用*/
 {
 
     body {
         margin: 0;
-        &.open{
-            .container{
+        width: 100%;
+
+        &.open {
+            transition-duration: 1s;
+            background-color: #FF1747;
+
+            .container {
                 visibility: hidden;
                 opacity: 0;
             }
         }
-    }
 
-    .open {
-        transition-duration: 1s;
-        background-color: #FF1747;
-    }
+        .container {
+            text-align: center;
+            padding-top: 13vw;
 
-    .container {
-        text-align: center;
-        padding-top: 13vw;
-    }
+            .top_content {
+                padding: 1px;
 
-    .top_text h1 {
-        font-size: 4.5em;
-        font-family: Impact;
-    }
+                .top_text h1 {
+                    font-size: 4.5em;
+                    font-family: Impact;
 
-    .top_content {
-        padding: 1px;
+                    .heart {
+                        position: absolute;
+                        width: 100px;
+                        height: 90px;
+                        left: 50%;
+                        margin-top: -45px;
+                        margin-left: 70px;
+
+                        &:before, &:after {
+                            position: absolute;
+                            content: "";
+                            left: 50px;
+                            top: -43px;
+                            width: 50px;
+                            height: 80px;
+                            background: #ff0000;
+                            border-radius: 50px 50px 0 0;
+                            transform: rotate(-45deg);
+                            transform-origin: 0 100%;
+                        }
+
+                        &:after {
+                            left: 0;
+                            transform: rotate(45deg);
+                            transform-origin: 100% 100%;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

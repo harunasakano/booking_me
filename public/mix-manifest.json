@@ -3,7 +3,6 @@
     "/css/app.css": "/css/app.css",
     "/css/SP/header.css": "/css/SP/header.css",
     "/css/SP/top.css": "/css/SP/top.css",
-    "/css/PC/header.css": "/css/PC/header.css",
-    "/css/PC/top.css": "/css/PC/top.css",
+    "/css/top.css": "/css/top.css",
     "/js/navbar.js": "/js/navbar.js"
 }
