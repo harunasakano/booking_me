@@ -16,12 +16,4 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.js('resources/js/navbar.js', 'public/js')
 
-/* SP用のCSS */
-mix.sass('resources/sass/SP/header.scss', 'public/css/SP');
-mix.sass('resources/sass/SP/top.scss', 'public/css/SP');
-
-/* PC用のCSS */
-//mix.sass('resources/sass/PC/header.scss', 'public/css/PC');
-//mix.sass('resources/sass/PC/top.scss', 'public/css/PC');
-
-mix.sass('resources/sass/_site.scss', 'public/css/top.css');
+mix.sass('resources/sass/_site.scss', 'public/css/style.css');

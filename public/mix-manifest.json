@@ -1,8 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/SP/header.css": "/css/SP/header.css",
-    "/css/SP/top.css": "/css/SP/top.css",
-    "/css/top.css": "/css/top.css",
+    "/css/style.css": "/css/style.css",
     "/js/navbar.js": "/js/navbar.js"
 }
