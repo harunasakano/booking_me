@@ -1,8 +1,12 @@
 @charset "UTF-8";
 
-/* header parts css PC */
-
 @media screen and (min-width: 767px) {
+  /* header parts css PC */
+
+  /* top-page css PC */
+}
+
+@media screen and (min-width: 767px) and (min-width: 767px) {
   header {
     background-color: #FF1747;
     position: fixed;
@@ -87,8 +91,6 @@
     bottom: 0;
   }
 }
-
-/* top-page css PC */
 
 @media screen and (min-width: 767px) {
   body {
@@ -275,15 +277,13 @@
     position: relative;
   }
 
-  body .container .top_content .top_text h1 .heart {
-    position: absolute;
-    top: 0;
-    right: 32%;
+  body .container .top_content .top_text .heart {
+    float: right;
   }
 
-  body .container .top_content .top_text h1 .heart:before,
-  body .container .top_content .top_text h1 .heart:after {
-    position: absolute;
+  body .container .top_content .top_text .heart:before,
+  body .container .top_content .top_text .heart:after {
+    float: right;
     content: "";
     left: 30px;
     width: 30px;
@@ -296,7 +296,7 @@
     transform-origin: 0 100%;
   }
 
-  body .container .top_content .top_text h1 .heart:after {
+  body .container .top_content .top_text .heart:after {
     left: 0;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);

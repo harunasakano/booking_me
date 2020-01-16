@@ -1,6 +1,10 @@
-@import "PC/header";
-@import "PC/top";
-@media screen and (max-width: 767px) /*ウィンドウ幅が767px以上の場合に適用*/
+@media screen and (min-width: 767px)
+{
+    @import "PC/header";
+    @import "PC/top";
+}
+
+@media screen and (max-width: 767px) /*ウィンドウ幅が767px以下の場合に適用*/
 {
     @import "SP/header";
     @import "SP/top";

@@ -3,8 +3,8 @@
     <div class="container">
         <div class="top_content">
             <section class="top_text">
-                <h1>Booking Me<div class="heart"></div>
-                </h1>
+                <div class="site_title"><h1>Booking Me</h1></div>
+                <div class="heart"></div>
             </section>
         </div>
     </div>

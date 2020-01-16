@@ -3,30 +3,38 @@
 body {
     margin: 0;
     width: 100%;
+
     &.open {
         transition-duration: 1s;
         background-color: #FF1747;
+
         .container {
             visibility: hidden;
             opacity: 0;
         }
     }
+
     .container {
         margin-left: 8vw;
         padding-top: 20vw;
+
         .top_content {
             padding: 1px;
-            .top_text h1 {
-                font-size: 3em;
-                font-family: Impact;
-                position: relative;
+
+            .top_text {
+                h1 {
+                    font-size: 3em;
+                    font-family: Impact;
+                    position: relative;
+                }
+
                 .heart {
-                    position: absolute;
-                    top: 0;
-                    right: 32%;
+                    //position: absolute;
+                    float: right;
 
                     &:before, &:after {
-                        position: absolute;
+                        //position: absolute;
+                        float: right;
                         content: "";
                         left: 30px;
                         width: 30px;
