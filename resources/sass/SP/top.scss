@@ -15,26 +15,28 @@ body {
     }
 
     .container {
-        margin-left: 8vw;
-        padding-top: 20vw;
+        width: 100%;
+        position: relative;
 
         .top_content {
-            padding: 1px;
+            width: 320px;
+            margin: 0 auto;
 
             .top_text {
+                padding-top: 13vw;
                 h1 {
-                    font-size: 3em;
-                    font-family: Impact;
-                    position: relative;
+                    font-size: 55px;
+                    font-family: 'Anton', Impact,"Times New Roman";
+                    display: inline-block;
                 }
 
                 .heart {
-                    //position: absolute;
-                    float: right;
+                    position: relative;
+                    display: inline-block;
+                    top:-47px;
 
                     &:before, &:after {
-                        //position: absolute;
-                        float: right;
+                        position: absolute;
                         content: "";
                         left: 30px;
                         width: 30px;

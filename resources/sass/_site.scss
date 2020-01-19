@@ -2,10 +2,12 @@
 {
     @import "PC/header";
     @import "PC/top";
+    @import "PC/footer";
 }
 
 @media screen and (max-width: 767px) /*ウィンドウ幅が767px以下の場合に適用*/
 {
     @import "SP/header";
     @import "SP/top";
+    @import "SP/footer";
 }

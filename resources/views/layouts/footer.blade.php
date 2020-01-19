@@ -1,0 +1,4 @@
+<footer>
+    <div class="footer_wrapper">
+    </div>
+</footer>

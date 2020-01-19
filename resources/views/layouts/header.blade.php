@@ -13,9 +13,19 @@
             <li class="menu_list">
                 サービス
             </li>
-            <li class="menu_list">
-                ログイン
-            </li>
+            @if(Auth::check())
+              <li class="menu_list">
+                {{ \Auth::user()->name }}さん<br />
+                <a href="/auth/logout">ログアウト</a>
+              </li>
+            @else
+              <li class="menu_list">
+                <a href="/auth/login">ログイン</a><br />
+              </li>
+              <li class="menu_list">
+                <a href="/auth/register">会員登録</a>
+              </li>
+            @endif
             <li class="menu_list">
                 お問い合わせ
             </li>

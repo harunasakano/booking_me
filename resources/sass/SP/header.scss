@@ -22,7 +22,6 @@ header {
     align-items: center;
     font-size: 29px;
     opacity: 0;
-    transition: opacity .6s ease, visibility .6s ease;
 }
 
 ul.gblnv_list {
@@ -36,9 +35,15 @@ li.menu_list {
     padding: 10px;
     color: #fff0ff;
     font-family: arial unicode ms;
+
+    a {
+        color: #fff0ff;
+        text-decoration: none;
+    }
 }
 
 .open #global-nav {
+    transition: opacity .6s ease, visibility .6s ease;
     visibility: visible;
     opacity: 1;
 }

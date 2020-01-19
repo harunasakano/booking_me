@@ -10739,7 +10739,8 @@ global.$ = global.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jqu
 $(document).ready(function () {
   $('#nav-toggle').on('click', function () {
     $('body').toggleClass('open');
-    $(this).addClass('open');
+    $(this).toggleClass('open');
+    $('footer').toggleClass('hide');
   });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))

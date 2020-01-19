@@ -1,58 +1,59 @@
 /* top-page css PC */
 
-    body {
-        margin: 0;
-        width: 100%;
+body {
+    margin: 0;
+    width: 100%;
 
-        &.open {
-            transition-duration: 1s;
-            background-color: #FF1747;
-
-            .container {
-                visibility: hidden;
-                opacity: 0;
-            }
-        }
+    &.open {
+        transition-duration: 1s;
+        background-color: #FF1747;
 
         .container {
-            text-align: center;
-            padding-top: 13vw;
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
 
-            .top_content {
-                padding: 1px;
+    .container {
+        width: 100%;
 
-                .top_text h1 {
-                    font-size: 4.5em;
-                    font-family: Impact;
+        .top_content {
+            .top_text {
+                padding-top: 10vw;
+                text-align: center;
+                /*ハートが入ることにより中心がずれるので調整*/
+                margin-right: 99.7px;
+                h1 {
+                    font-size: 100px;
+                    font-family: 'Anton', Impact,"Times New Roman";
+                    display: inline-block;
+                }
+                .heart {
+                    position: relative;
+                    display: inline-block;
+                    top:-86px;
 
-                    .heart {
+                    &:before, &:after {
                         position: absolute;
-                        width: 100px;
-                        height: 90px;
-                        left: 57%;
-                        margin-top: -55px;
-                        margin-left:80px;
+                        content: "";
+                        left: 54px;
+                        width: 55px;
+                        height: 86px;
+                        background: #ff0000;
+                        border-radius: 89px 89px 0 0;
+                        -webkit-transform: rotate(-45deg);
+                        transform: rotate(-45deg);
+                        -webkit-transform-origin: 0 100%;
+                        transform-origin: 0 100%;
+                    }
 
-                        &:before, &:after {
-                            position: absolute;
-                            content: "";
-                            left: 50px;
-                            top: -43px;
-                            width: 50px;
-                            height: 80px;
-                            background: #ff0000;
-                            border-radius: 50px 50px 0 0;
-                            transform: rotate(-45deg);
-                            transform-origin: 0 100%;
-                        }
-
-                        &:after {
-                            left: 0;
-                            transform: rotate(45deg);
-                            transform-origin: 100% 100%;
-                        }
+                    &:after {
+                        left: 0;
+                        transform: rotate(45deg);
+                        transform-origin: 100% 100%;
                     }
                 }
             }
         }
     }
+}

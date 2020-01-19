@@ -4,6 +4,8 @@
   /* header parts css PC */
 
   /* top-page css PC */
+
+  /* header parts css PC */
 }
 
 @media screen and (min-width: 767px) and (min-width: 767px) {
@@ -34,8 +36,6 @@
             align-items: center;
     font-size: 34px;
     opacity: 0;
-    -webkit-transition: opacity 0.6s ease, visibility 0.6s ease;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
   }
 
   ul.gblnv_list {
@@ -51,9 +51,16 @@
     font-family: arial unicode ms;
   }
 
+  li.menu_list a {
+    text-decoration: none;
+    color: #fff0ff;
+  }
+
   .open #global-nav {
     visibility: visible;
     opacity: 1;
+    -webkit-transition: opacity 0.6s ease, visibility 0.6s ease;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
   }
 
   #nav-toggle {
@@ -110,50 +117,61 @@
   }
 
   body .container {
-    text-align: center;
-    padding-top: 13vw;
+    width: 100%;
   }
 
-  body .container .top_content {
-    padding: 1px;
+  body .container .top_content .top_text {
+    padding-top: 10vw;
+    text-align: center;
+    /*ハートが入ることにより中心がずれるので調整*/
+    margin-right: 99.7px;
   }
 
   body .container .top_content .top_text h1 {
-    font-size: 4.5em;
-    font-family: Impact;
+    font-size: 100px;
+    font-family: "Anton", Impact, "Times New Roman";
+    display: inline-block;
   }
 
-  body .container .top_content .top_text h1 .heart {
-    position: absolute;
-    width: 100px;
-    height: 90px;
-    left: 57%;
-    margin-top: -55px;
-    margin-left: 80px;
+  body .container .top_content .top_text .heart {
+    position: relative;
+    display: inline-block;
+    top: -86px;
   }
 
-  body .container .top_content .top_text h1 .heart:before,
-  body .container .top_content .top_text h1 .heart:after {
+  body .container .top_content .top_text .heart:before,
+  body .container .top_content .top_text .heart:after {
     position: absolute;
     content: "";
-    left: 50px;
-    top: -43px;
-    width: 50px;
-    height: 80px;
+    left: 54px;
+    width: 55px;
+    height: 86px;
     background: #ff0000;
-    border-radius: 50px 50px 0 0;
+    border-radius: 89px 89px 0 0;
     -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    transform: rotate(-45deg);
     -webkit-transform-origin: 0 100%;
-            transform-origin: 0 100%;
+    transform-origin: 0 100%;
   }
 
-  body .container .top_content .top_text h1 .heart:after {
+  body .container .top_content .top_text .heart:after {
     left: 0;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
     -webkit-transform-origin: 100% 100%;
             transform-origin: 100% 100%;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  footer .footer_wrapper {
+    width: 100%;
+    height: 300px;
+    background-color: #602D1D;
+  }
+
+  footer.hide {
+    display: none;
   }
 }
 
@@ -187,8 +205,6 @@
             align-items: center;
     font-size: 29px;
     opacity: 0;
-    -webkit-transition: opacity 0.6s ease, visibility 0.6s ease;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
   }
 
   ul.gblnv_list {
@@ -204,7 +220,14 @@
     font-family: arial unicode ms;
   }
 
+  li.menu_list a {
+    color: #fff0ff;
+    text-decoration: none;
+  }
+
   .open #global-nav {
+    -webkit-transition: opacity 0.6s ease, visibility 0.6s ease;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
     visibility: visible;
     opacity: 1;
   }
@@ -263,27 +286,34 @@
   }
 
   body .container {
-    margin-left: 8vw;
-    padding-top: 20vw;
-  }
-
-  body .container .top_content {
-    padding: 1px;
-  }
-
-  body .container .top_content .top_text h1 {
-    font-size: 3em;
-    font-family: Impact;
+    width: 100%;
     position: relative;
   }
 
+  body .container .top_content {
+    width: 320px;
+    margin: 0 auto;
+  }
+
+  body .container .top_content .top_text {
+    padding-top: 13vw;
+  }
+
+  body .container .top_content .top_text h1 {
+    font-size: 55px;
+    font-family: "Anton", Impact, "Times New Roman";
+    display: inline-block;
+  }
+
   body .container .top_content .top_text .heart {
-    float: right;
+    position: relative;
+    display: inline-block;
+    top: -47px;
   }
 
   body .container .top_content .top_text .heart:before,
   body .container .top_content .top_text .heart:after {
-    float: right;
+    position: absolute;
     content: "";
     left: 30px;
     width: 30px;
@@ -302,6 +332,18 @@
             transform: rotate(45deg);
     -webkit-transform-origin: 100% 100%;
             transform-origin: 100% 100%;
+  }
+
+  /* header parts css SP */
+
+  footer .footer_wrapper {
+    width: 100%;
+    height: 200px;
+    background-color: #602D1D;
+  }
+
+  footer.hide {
+    display: none;
   }
 }
 

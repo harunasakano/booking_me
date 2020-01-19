@@ -24,7 +24,6 @@
         align-items: center;
         font-size: 34px;
         opacity: 0;
-        transition: opacity .6s ease, visibility .6s ease;
     }
 
     ul.gblnv_list {
@@ -38,11 +37,17 @@
         padding: 13px;
         color: #fff0ff;
         font-family: arial unicode ms;
+
+        a {
+            text-decoration: none;
+            color: #fff0ff;
+        }
     }
 
     .open #global-nav {
         visibility: visible;
         opacity: 1;
+        transition: opacity .6s ease, visibility .6s ease;
     }
 
     #nav-toggle {
