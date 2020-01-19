@@ -6,6 +6,8 @@
   /* top-page css PC */
 
   /* header parts css PC */
+
+  /* register parts css PC */
 }
 
 @media screen and (min-width: 767px) and (min-width: 767px) {
@@ -172,6 +174,12 @@
 
   footer.hide {
     display: none;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .register-wrapper {
+    padding: 100px;
   }
 }
 
@@ -344,6 +352,12 @@
 
   footer.hide {
     display: none;
+  }
+
+  /* register parts css SP */
+
+  .register-wrapper {
+    padding: 100px;
   }
 }
 

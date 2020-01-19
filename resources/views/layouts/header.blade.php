@@ -16,14 +16,14 @@
             @if(Auth::check())
               <li class="menu_list">
                 {{ \Auth::user()->name }}さん<br />
-                <a href="/auth/logout">ログアウト</a>
+                <a href="/logout">ログアウト</a>
               </li>
             @else
               <li class="menu_list">
-                <a href="/auth/login">ログイン</a><br />
+                <a href="/login">ログイン</a><br />
               </li>
               <li class="menu_list">
-                <a href="/auth/register">会員登録</a>
+                <a href="/register">会員登録</a>
               </li>
             @endif
             <li class="menu_list">
