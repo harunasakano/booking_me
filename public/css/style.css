@@ -53,6 +53,10 @@
     font-family: arial unicode ms;
   }
 
+  li.menu_list .logged_in_user_name {
+    display: block;
+  }
+
   li.menu_list a {
     text-decoration: none;
     color: #fff0ff;
@@ -163,6 +167,11 @@
     -webkit-transform-origin: 100% 100%;
             transform-origin: 100% 100%;
   }
+
+  body .container .top_content .status_message {
+    position: absolute;
+    top: 70px;
+  }
 }
 
 @media screen and (min-width: 767px) {
@@ -231,6 +240,10 @@
   li.menu_list a {
     color: #fff0ff;
     text-decoration: none;
+  }
+
+  li.menu_list .logged_in_user_name {
+    display: block;
   }
 
   .open #global-nav {
@@ -340,6 +353,11 @@
             transform: rotate(45deg);
     -webkit-transform-origin: 100% 100%;
             transform-origin: 100% 100%;
+  }
+
+  body .container .top_content .status_message {
+    position: absolute;
+    top: 70px;
   }
 
   /* header parts css SP */

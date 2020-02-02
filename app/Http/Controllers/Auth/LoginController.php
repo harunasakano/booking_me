@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -36,4 +37,20 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    // ログイン後メッセージ出力
+    protected function authenticated(Request $request, $user)
+    {
+        return redirect('/' )->with('my_status', __('auth.login_done'));
+    }
+
+    // ログアウト後メッセージ出力
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+        $request->session()->invalidate();
+
+        return $this->loggedOut($request) ?: redirect('/')->with('my_status', __('auth.logout_done'));
+    }
+
 }

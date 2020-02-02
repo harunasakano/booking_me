@@ -23,15 +23,17 @@ body {
                 text-align: center;
                 /*ハートが入ることにより中心がずれるので調整*/
                 margin-right: 99.7px;
+
                 h1 {
                     font-size: 100px;
-                    font-family: 'Anton', Impact,"Times New Roman";
+                    font-family: 'Anton', Impact, "Times New Roman";
                     display: inline-block;
                 }
+
                 .heart {
                     position: relative;
                     display: inline-block;
-                    top:-86px;
+                    top: -86px;
 
                     &:before, &:after {
                         position: absolute;
@@ -53,6 +55,11 @@ body {
                         transform-origin: 100% 100%;
                     }
                 }
+            }
+
+            .status_message {
+                position: absolute;
+                top: 70px;
             }
         }
     }

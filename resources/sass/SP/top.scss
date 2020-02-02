@@ -24,16 +24,17 @@ body {
 
             .top_text {
                 padding-top: 13vw;
+
                 h1 {
                     font-size: 55px;
-                    font-family: 'Anton', Impact,"Times New Roman";
+                    font-family: 'Anton', Impact, "Times New Roman";
                     display: inline-block;
                 }
 
                 .heart {
                     position: relative;
                     display: inline-block;
-                    top:-47px;
+                    top: -47px;
 
                     &:before, &:after {
                         position: absolute;
@@ -55,6 +56,11 @@ body {
                         transform-origin: 100% 100%;
                     }
                 }
+            }
+
+            .status_message {
+                position: absolute;
+                top: 70px;
             }
         }
     }

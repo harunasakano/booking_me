@@ -15,7 +15,7 @@
             </li>
             @if(Auth::check())
                 <li class="menu_list">
-                    {{ \Auth::user()->name }}さん<br>
+                    <span class="logged_in_user_name">{{ \Auth::user()->name }}さん</span>
                     <a href="/logout" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">ログアウト</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
