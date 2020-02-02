@@ -1,10 +1,10 @@
 {{-- メニュー閉じた状態デフォルト --}}
 <header>
-        <div id="nav-toggle">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+    <div id="nav-toggle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 </header>
 {{-- メニュー開いた状態 --}}
 <div id="global-nav">
@@ -14,17 +14,21 @@
                 サービス
             </li>
             @if(Auth::check())
-              <li class="menu_list">
-                {{ \Auth::user()->name }}さん<br />
-                <a href="/logout">ログアウト</a>
-              </li>
+                <li class="menu_list">
+                    {{ \Auth::user()->name }}さん<br>
+                    <a href="/logout" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">ログアウト</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </li>
             @else
-              <li class="menu_list">
-                <a href="/login">ログイン</a><br />
-              </li>
-              <li class="menu_list">
-                <a href="/register">会員登録</a>
-              </li>
+                <li class="menu_list">
+                    <a href="/login">ログイン</a><br/>
+                </li>
+                <li class="menu_list">
+                    <a href="/register">会員登録</a>
+                </li>
             @endif
             <li class="menu_list">
                 お問い合わせ

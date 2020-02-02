@@ -13,16 +13,12 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('test', function () {
-    return \Test::les();
-});
-
 Route::get('/', function () {
     return view('top.top');
 });
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::get('test', function () {
+//    return \Test::les();
+//});
