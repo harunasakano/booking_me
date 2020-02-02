@@ -41,7 +41,7 @@ class LoginController extends Controller
     // ログイン後メッセージ出力
     protected function authenticated(Request $request, $user)
     {
-        return redirect('/' )->with('my_status', __('auth.login_done'));
+        return redirect('/')->with('my_status', __('auth.login_done'));
     }
 
     // ログアウト後メッセージ出力
