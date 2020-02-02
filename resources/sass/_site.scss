@@ -4,6 +4,8 @@
     @import "PC/top";
     @import "PC/footer";
     @import "PC/register";
+
+    @import "PC/user_show";
 }
 
 @media screen and (max-width: 767px) /*ウィンドウ幅が767px以下の場合に適用*/
@@ -12,4 +14,6 @@
     @import "SP/top";
     @import "SP/footer";
     @import "SP/register";
+
+    @import "SP/user_show";
 }

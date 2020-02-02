@@ -8,6 +8,8 @@
   /* header parts css PC */
 
   /* register parts css PC */
+
+  /* user_show css PC */
 }
 
 @media screen and (min-width: 767px) and (min-width: 767px) {
@@ -26,9 +28,7 @@
     top: 10vw;
     z-index: 990;
     text-align: center;
-    display: -webkit-box;
-    display: flex;
-    visibility: hidden;
+    display: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
@@ -63,10 +63,11 @@
   }
 
   .open #global-nav {
-    visibility: visible;
-    opacity: 1;
+    display: -webkit-box;
+    display: flex;
     -webkit-transition: opacity 0.6s ease, visibility 0.6s ease;
     transition: opacity 0.6s ease, visibility 0.6s ease;
+    opacity: 1;
   }
 
   #nav-toggle {
@@ -177,7 +178,7 @@
 @media screen and (min-width: 767px) {
   footer .footer_wrapper {
     width: 100%;
-    height: 300px;
+    height: 100px;
     background-color: #602D1D;
     position: absolute;
     bottom: 0;
@@ -191,6 +192,26 @@
 @media screen and (min-width: 767px) {
   .register-wrapper {
     padding: 100px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .user_show_wrapper {
+    display: inline-block;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+  }
+
+  .user_show_wrapper .user_info {
+    font-family: Hiragino Maru Gothic ProN;
+    text-align: center;
+    padding: 0;
+    font-size: 1.5em;
+  }
+
+  .user_show_wrapper .user_info a {
+    text-decoration: none;
   }
 }
 
@@ -212,9 +233,7 @@
     top: 20vw;
     z-index: 990;
     text-align: center;
-    display: -webkit-box;
-    display: flex;
-    visibility: hidden;
+    display: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
@@ -249,9 +268,10 @@
   }
 
   .open #global-nav {
+    display: -webkit-box;
+    display: flex;
     -webkit-transition: opacity 0.6s ease, visibility 0.6s ease;
     transition: opacity 0.6s ease, visibility 0.6s ease;
-    visibility: visible;
     opacity: 1;
   }
 
@@ -380,6 +400,26 @@
 
   .register-wrapper {
     padding: 100px;
+  }
+
+  /* user_show scss PC */
+
+  .user_show_wrapper {
+    display: inline-block;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+  }
+
+  .user_show_wrapper .user_info {
+    font-family: Hiragino Maru Gothic ProN;
+    text-align: center;
+    padding: 0;
+    font-size: 1.5em;
+  }
+
+  .user_show_wrapper .user_info a {
+    text-decoration: none;
   }
 }
 

@@ -17,8 +17,7 @@
         top: 10vw;
         z-index: 990;
         text-align: center;
-        display: flex;
-        visibility: hidden;
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -49,9 +48,9 @@
     }
 
     .open #global-nav {
-        visibility: visible;
-        opacity: 1;
+        display: flex;
         transition: opacity .6s ease, visibility .6s ease;
+        opacity: 1;
     }
 
     #nav-toggle {

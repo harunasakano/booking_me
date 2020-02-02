@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/style.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 </head>
 @include('layouts.header')

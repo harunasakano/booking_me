@@ -11,14 +11,13 @@
 |
 */
 
+use App\Http\Controllers\VacantController;
+
 Auth::routes();
 
 Route::get('/', function () {
     return view('top.top');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-//Route::get('test', function () {
-//    return \Test::les();
-//});
+Route::resource('user', 'UserController');
+Route::resource('user/{id}/vacant', 'VacantController')->middleware('auth');

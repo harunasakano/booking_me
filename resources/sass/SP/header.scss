@@ -15,8 +15,7 @@ header {
     top: 20vw;
     z-index: 990;
     text-align: center;
-    display: flex;
-    visibility: hidden;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -47,8 +46,8 @@ li.menu_list {
 }
 
 .open #global-nav {
+    display: flex;
     transition: opacity .6s ease, visibility .6s ease;
-    visibility: visible;
     opacity: 1;
 }
 
