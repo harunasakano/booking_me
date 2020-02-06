@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vacant;
+use Illuminate\Support\Facades\Auth;
 
 class VacantController extends Controller
 {
@@ -25,18 +26,25 @@ class VacantController extends Controller
      */
     public function create(Vacant $vacant)
     {
-        return view('vacant.create',compact('vacant'));
+        $vacant_status = Vacant::VACANT_STATUS;
+        return view('vacant.create',compact('vacant','vacant_status'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     * @param Vacant $vacant
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Vacant $vacant)
     {
-        //
+          $vacant->create(['date' =>$request->date,
+                           'status'=>$request->status,
+                           'user_id' => Auth::user()->id
+          ]);
+
+        return view('user.shows')->with('my_status', __('auth.register_done'));
     }
 
     /**

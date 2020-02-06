@@ -19,10 +19,11 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/style.css') }}" rel="stylesheet">
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    @yield('head_scripts')
 </head>
 @include('layouts.header')
 @yield('content')
 @include('layouts.footer')
+@yield('footer_scripts')
 </html>

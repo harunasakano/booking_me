@@ -10,6 +10,8 @@
   /* register parts css PC */
 
   /* user_show css PC */
+
+  /* vacant create parts css PC */
 }
 
 @media screen and (min-width: 767px) and (min-width: 767px) {
@@ -191,7 +193,9 @@
 
 @media screen and (min-width: 767px) {
   .register-wrapper {
-    padding: 100px;
+    position: absolute;
+    top: 100px;
+    left: 20%;
   }
 }
 
@@ -212,6 +216,32 @@
 
   .user_show_wrapper .user_info a {
     text-decoration: none;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .register-form-group {
+    position: relative;
+    top: 80px;
+    height: 300px;
+  }
+
+  .register-form-group .input-group {
+    top: 150px;
+    display: table;
+    position: unset;
+  }
+
+  .register-form-group .input-group h5 {
+    display: table-caption;
+  }
+
+  .register-form-group .vacant_date_status {
+    margin-top: 20px;
+  }
+
+  .register-form-group .submit {
+    margin-top: 20px;
   }
 }
 
@@ -399,7 +429,9 @@
   /* register parts css SP */
 
   .register-wrapper {
-    padding: 100px;
+    position: absolute;
+    top: 100px;
+    left: 20%;
   }
 
   /* user_show scss PC */
@@ -420,6 +452,32 @@
 
   .user_show_wrapper .user_info a {
     text-decoration: none;
+  }
+
+  /* vacant create parts css SP */
+
+  .register-form-group {
+    position: relative;
+    top: 80px;
+    height: 300px;
+  }
+
+  .register-form-group .input-group {
+    top: 150px;
+    display: table;
+    position: unset;
+  }
+
+  .register-form-group .input-group h5 {
+    display: table-caption;
+  }
+
+  .register-form-group .vacant_date_status {
+    margin-top: 20px;
+  }
+
+  .register-form-group .submit {
+    margin-top: 20px;
   }
 }
 

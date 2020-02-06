@@ -2,6 +2,9 @@
 @section('content')
     <div class="container">
         <section class="user_show_wrapper">
+            <div class="status_message">
+                {{ session('my_status') }}
+            </div>
             <ul class="user_info">
                 <div class="vacant-link">
                     <a href="{{ route('vacant.create',['id' => \Auth::user()->id])}}">空いてる日を登録する！</a>

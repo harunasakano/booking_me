@@ -6,6 +6,7 @@
     @import "PC/register";
 
     @import "PC/user_show";
+    @import "PC/vacant_create";
 }
 
 @media screen and (max-width: 767px) /*ウィンドウ幅が767px以下の場合に適用*/
@@ -16,4 +17,5 @@
     @import "SP/register";
 
     @import "SP/user_show";
+    @import "SP/vacant_create";
 }
