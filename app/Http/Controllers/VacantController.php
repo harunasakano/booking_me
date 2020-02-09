@@ -39,12 +39,14 @@ class VacantController extends Controller
      */
     public function store(Request $request, Vacant $vacant)
     {
-          $vacant->create(['date' =>$request->date,
+          $a = $vacant->create(['date' =>$request->date,
                            'status'=>$request->status,
                            'user_id' => Auth::user()->id
           ]);
 
-        return view('user.shows')->with('my_status', __('auth.register_done'));
+          dd($a);
+
+        //return view('user.shows')->with('my_status', __('auth.register_done'));
     }
 
     /**

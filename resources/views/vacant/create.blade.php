@@ -1,51 +1,56 @@
 @extends('layouts.master')
 @section('head_scripts')
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css"/>
+@endsection
+@section('body_scripts')
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 @endsection
 @section('content')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-
-    <form method="POST" action="{{ route('vacant.store',['id' => \Auth::user()->id]) }}">
+    <form method="POST" action="{{ route('vacant.store',['id' => \Auth::user()->id])}}" autocomplete="off">
         @csrf
         <div class="container">
-            <div class="register-form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <h5>{{ __('vacant.vacant') }}</h5>
-                    <input type='text' name='date' class="form-control"/>
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
+            <div class="form-group">
+                <div class="input-group date" id="my_datetimepicker" data-target-input="nearest">
+                    <input type="text" class="form-control datetimepicker-input" data-target="#my_datetimepicker"
+                           placeholder="日時を選択"/>
+                    <div class="input-group-append" data-target="#my_datetimepicker" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="vacant_date_status">
-                    <h5>{{ __('vacant.status') }}</h5>
-                    <select name="status">
-                        @foreach( $vacant_status as $status_word)
-                            <option value={{ $status_word }}>{{ $status_word }}</option>
-                        @endforeach
-                    </select>
-                </div>
+            </div>
 
+            <div class="form-group">
+                <div>{{ __('vacant.status') }}</div>
+                <select name="status">
+                    @foreach( $vacant_status as $status_word)
+                        <option value={{ $status_word }}>{{ $status_word }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="form-group">
                 <button type="submit" class="submit">
                     {{ __('vacant.submit') }}
                 </button>
-
             </div>
-        </div>
 
+        </div>
         <script>
-            jQuery(function ($) {
-                $('#datetimepicker1').datetimepicker();
+            $(function () {
+                $('#my_datetimepicker').datetimepicker({
+                    format: 'YYYY年MM月DD日HH時',
+                    autoclose: true,
+                    language: 'ja',
+                    sideBySide: true,
+                    minDate: Date(),
+                });
             });
         </script>
     </form>
+
 @endsection

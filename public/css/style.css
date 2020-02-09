@@ -220,28 +220,27 @@
 }
 
 @media screen and (min-width: 767px) {
-  .register-form-group {
+  .form-group {
     position: relative;
     top: 80px;
-    height: 300px;
   }
 
-  .register-form-group .input-group {
-    top: 150px;
-    display: table;
-    position: unset;
-  }
-
-  .register-form-group .input-group h5 {
-    display: table-caption;
-  }
-
-  .register-form-group .vacant_date_status {
+  .form-group .submit {
     margin-top: 20px;
   }
+}
 
-  .register-form-group .submit {
-    margin-top: 20px;
+@media screen and (min-width: 767px) {
+  .datepicker-days th.dow:first-child,
+  .datepicker-days td:first-child {
+    color: #f00;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .datepicker-days th.dow:last-child,
+  .datepicker-days td:last-child {
+    color: #00f;
   }
 }
 
@@ -456,28 +455,23 @@
 
   /* vacant create parts css SP */
 
-  .register-form-group {
+  .form-group {
     position: relative;
     top: 80px;
-    height: 300px;
   }
 
-  .register-form-group .input-group {
-    top: 150px;
-    display: table;
-    position: unset;
-  }
-
-  .register-form-group .input-group h5 {
-    display: table-caption;
-  }
-
-  .register-form-group .vacant_date_status {
+  .form-group .submit {
     margin-top: 20px;
   }
 
-  .register-form-group .submit {
-    margin-top: 20px;
+  .datepicker-days th.dow:first-child,
+  .datepicker-days td:first-child {
+    color: #f00;
+  }
+
+  .datepicker-days th.dow:last-child,
+  .datepicker-days td:last-child {
+    color: #00f;
   }
 }
 

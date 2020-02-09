@@ -1,26 +1,20 @@
 /* vacant create parts css PC */
 
-.register-form-group {
+.form-group {
     position: relative;
     top: 80px;
-    height: 300px;
-
-    .input-group {
-        top: 150px;
-        display: table;
-        position: unset;
-
-        h5 {
-            display: table-caption;
-        }
-    }
-
-    .vacant_date_status {
-        margin-top: 20px;
-    }
 
     .submit {
         margin-top: 20px;
     }
+}
 
+.datepicker-days th.dow:first-child,
+.datepicker-days td:first-child {
+    color: #f00;
+}
+
+.datepicker-days th.dow:last-child,
+.datepicker-days td:last-child {
+    color: #00f;
 }
