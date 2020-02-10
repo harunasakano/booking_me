@@ -3,8 +3,6 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css"/>
 @endsection
 @section('content')
-    <form method="POST" action="{{ route('vacant.edit',['id' => \Auth::user()->id,'vacant' => $vacant->id ])}}" >
-        @csrf
         <div class="container">
 
             <div class="form-group">
@@ -22,9 +20,11 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary my-1">
-                    {{ __('vacant.edit_submit') }}
-                </button>
+                <a href="{{ route('vacant.edit',['id' => \Auth::user()->id,'vacant' => $vacant->id ])}}">
+                    <button type="button" class="btn btn-primary my-1">
+                        {{ __('vacant.edit_submit') }}
+                    </button>
+                </a>
             </div>
 
         </div>

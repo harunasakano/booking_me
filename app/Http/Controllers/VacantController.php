@@ -52,25 +52,29 @@ class VacantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Vacant $vacant
-     * @param $id
+     * @param $user_id
+     * @param $vacant_id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_id, $vacant_id)
     {
-        $vacant = Vacant::find($id);
+        $vacant = Vacant::find($vacant_id);
         return view('vacant.shows', compact('vacant'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param $user_id
+     * @param $vacant_id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($user_id, $vacant_id)
     {
-        //
+        $vacant_status = Vacant::VACANT_STATUS;
+        $vacant = Vacant::find($vacant_id);
+
+        return view('vacant.edit', compact('vacant','vacant_status'));
     }
 
     /**
