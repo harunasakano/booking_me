@@ -74,19 +74,29 @@ class VacantController extends Controller
         $vacant_status = Vacant::VACANT_STATUS;
         $vacant = Vacant::find($vacant_id);
 
-        return view('vacant.edit', compact('vacant','vacant_status'));
+        return view('vacant.edit', compact('vacant', 'vacant_status'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param $user_id
+     * @param $vacant_id
+     * @return void
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $user_id, $vacant_id)
     {
-        //
+
+        $aaa = Vacant::updateOrCreate([
+            'user_id' => $user_id,
+            'id' => $vacant_id,
+            'date' => $request->date,
+            'status' => $request->status,
+        ]);
+
+        //TODO vacantのindexページが完成したら登録完了後はそこに飛ばす
+        return redirect()->route('user.show', ['user' => Auth::user()->id])->with('my_status', __('vacant.update_done'));
     }
 
     /**

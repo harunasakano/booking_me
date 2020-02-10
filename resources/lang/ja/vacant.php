@@ -17,6 +17,7 @@ return [
     'submit' => '登録',
     'status' => 'ステータス設定',
     'register_done' => '空き日を登録しました！',
+    'update_done' => '空き日を更新しました！',
     'show' => '空き日詳細',
     'edit' => '空き日編集',
     'edit_submit' => '編集する',

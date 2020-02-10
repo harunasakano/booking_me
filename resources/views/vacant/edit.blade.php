@@ -13,6 +13,7 @@
 @section('content')
     <form method="POST" action="{{ route('vacant.update',['id' => \Auth::user()->id,'vacant' => $vacant->id ])}}">
         @csrf
+        <input name="_method" type="hidden" value="PUT">
         <div class="container">
 
             <div class="form-group">
