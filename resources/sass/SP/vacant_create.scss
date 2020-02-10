@@ -4,8 +4,19 @@
     position: relative;
     top: 80px;
 
-    .submit {
-        margin-top: 20px;
+    .btn-primary {
+        background-color: #FF1747;
+        border-color: #FF1747;
+
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba(255, 15, 32, 0.5);
+        }
+
+        &:hover {
+            background-color: #E5143F;
+            border-color: #E5143F;
+        }
+
     }
 }
 
@@ -13,6 +24,7 @@
 .datepicker-days td:first-child {
     color: #f00;
 }
+
 .datepicker-days th.dow:last-child,
 .datepicker-days td:last-child {
     color: #00f;

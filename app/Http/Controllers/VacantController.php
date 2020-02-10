@@ -27,7 +27,7 @@ class VacantController extends Controller
     public function create(Vacant $vacant)
     {
         $vacant_status = Vacant::VACANT_STATUS;
-        return view('vacant.create',compact('vacant','vacant_status'));
+        return view('vacant.create', compact('vacant', 'vacant_status'));
     }
 
     /**
@@ -39,20 +39,20 @@ class VacantController extends Controller
      */
     public function store(Request $request, Vacant $vacant)
     {
-          $a = $vacant->create(['date' =>$request->date,
-                           'status'=>$request->status,
-                           'user_id' => Auth::user()->id
-          ]);
 
-          dd($a);
+        $vacant->create(['date' => $request->date,
+            'status' => $request->status,
+            'user_id' => Auth::user()->id
+        ]);
 
-        //return view('user.shows')->with('my_status', __('auth.register_done'));
+        //TODO vacantのindexページが完成したら登録完了後はそこに飛ばす
+        return redirect()->route('user.show', ['user' => Auth::user()->id])->with('my_status', __('vacant.register_done'));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -63,7 +63,7 @@ class VacantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -74,8 +74,8 @@ class VacantController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -86,7 +86,7 @@ class VacantController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -16,4 +16,6 @@ return [
     'vacant' => '空き日登録',
     'submit' => '登録',
     'status' => 'ステータス設定',
+    'register_done' => '空き日を登録しました！',
+
 ];

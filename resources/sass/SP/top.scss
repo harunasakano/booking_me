@@ -22,8 +22,9 @@ body {
             width: 320px;
             margin: 0 auto;
 
-            .top_text {
-                padding-top: 13vw;
+            .top_title {
+                position: absolute;
+                top: 100px;
 
                 h1 {
                     font-size: 55px;
