@@ -52,12 +52,14 @@ class VacantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param Vacant $vacant
+     * @param $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $vacant = Vacant::find($id);
+        return view('vacant.shows', compact('vacant'));
     }
 
     /**
