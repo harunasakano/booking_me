@@ -15,7 +15,8 @@ class VacantController extends Controller
      */
     public function index()
     {
-        //
+        $vacant = Vacant::all();
+        return view('vacant.index', compact('vacant'));
     }
 
     /**
@@ -88,12 +89,12 @@ class VacantController extends Controller
     public function update(Request $request, $user_id, $vacant_id)
     {
 
-        $aaa = Vacant::updateOrCreate([
-            'user_id' => $user_id,
-            'id' => $vacant_id,
-            'date' => $request->date,
-            'status' => $request->status,
-        ]);
+        Vacant::where('id', $vacant_id)
+            ->update
+            ([
+                'date' => $request->date,
+                'status' => $request->status,
+            ]);
 
         //TODO vacantのindexページが完成したら登録完了後はそこに飛ばす
         return redirect()->route('user.show', ['user' => Auth::user()->id])->with('my_status', __('vacant.update_done'));
