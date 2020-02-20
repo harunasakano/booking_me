@@ -48,9 +48,9 @@
         <script>
             $(function () {
                 $('#my_datetimepicker').datetimepicker({
-                    format: 'YYYY年MM月DD日HH時',
-                    autoclose: true,
                     language: 'ja',
+                    format: "YYYY/MM/DD HH:00",
+                    autoclose: true,
                     sideBySide: true,
                     minDate: new Date(),
                 });

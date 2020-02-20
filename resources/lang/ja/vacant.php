@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'main' => '空き日',
     'vacant' => '空き日登録',
     'submit' => '登録',
     'status' => 'ステータス',
@@ -22,4 +23,5 @@ return [
     'edit' => '空き日編集',
     'edit_submit' => '編集する',
     'update_submit' => '更新する',
+    'updated_at' => '更新日',
 ];

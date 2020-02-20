@@ -9,7 +9,9 @@ class Vacant extends Model
     protected $table = 'vacant';
 
     protected $fillable = [
-        'date', 'status','user_id',
+        'date',
+        'status',
+        'user_id',
     ];
 
     const VACANT_STATUS = [

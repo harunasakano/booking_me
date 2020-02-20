@@ -12,6 +12,8 @@
   /* user_show css PC */
 
   /* vacant create parts css PC */
+
+  /* vacant index parts css PC */
 }
 
 @media screen and (min-width: 767px) and (min-width: 767px) {
@@ -181,7 +183,7 @@
 @media screen and (min-width: 767px) {
   footer .footer_wrapper {
     width: 100%;
-    height: 100px;
+    height: 8%;
     background-color: #602D1D;
     position: fixed;
     bottom: 0;
@@ -251,6 +253,14 @@
   .datepicker-days th.dow:last-child,
   .datepicker-days td:last-child {
     color: #00f;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .calendar {
+    position: absolute;
+    top: 100px;
+    width: 90%;
   }
 }
 
@@ -426,7 +436,7 @@
 
   footer .footer_wrapper {
     width: 100%;
-    height: 200px;
+    height: 8%;
     background-color: #602D1D;
     position: fixed;
     bottom: 0;
@@ -492,6 +502,14 @@
   .datepicker-days th.dow:last-child,
   .datepicker-days td:last-child {
     color: #00f;
+  }
+
+  /* vacant index parts css SP */
+
+  .calendar {
+    position: absolute;
+    top: 100px;
+    width: 90%;
   }
 }
 

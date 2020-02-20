@@ -7,6 +7,7 @@
 
     @import "PC/user_show";
     @import "PC/vacant_create";
+    @import "PC/vacant_index";
 }
 
 @media screen and (max-width: 767px) /*ウィンドウ幅が767px以下の場合に適用*/
@@ -18,4 +19,5 @@
 
     @import "SP/user_show";
     @import "SP/vacant_create";
+    @import "SP/vacant_index";
 }
