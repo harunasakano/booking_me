@@ -3,6 +3,7 @@
     <div class="container">
         <div class="calendar">
             <table class="table">
+                <h5 class="">{{ $data['head'] }}</h5>
                 <thead>
                 <tr>
                     <th>月</th>
@@ -15,19 +16,15 @@
                 </tr>
                 </thead>
                 <tbody>
-
-                {{--1行目--}}
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                </tr>
+                {!! $data['html'] !!}
                 </tbody>
             </table>
+            @if (!empty($data['prev']))
+                <a href="{{ route('vacant.index',['id' => \Auth::user()->id])}}/{{  $data['prev'] }}"><div>prev</div></a>
+            @endif
+            @if (!empty($data['next']))
+                <a href="{{ route('vacant.index',['id' => \Auth::user()->id])}}/{{  $data['next'] }}"><div>next</div></a>
+            @endif
         </div>
     </div>
 @endsection
