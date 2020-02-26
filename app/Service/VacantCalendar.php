@@ -16,11 +16,15 @@ Class VacantCalendar
     public function htmlExport($date_latest, $req_year_month)
     {
 
-        $data = [];
+        $all_year_month = [];
         $clean_year_month = [];
         $date_of_first_last = [];
         $req_year_month_key = '';
+        $vacant = [];
+        $req_vacant_id_date = [];
+        $data = [];
 
+        //年月カレンダー生成用
         foreach ($date_latest as $date_value) {
             $all_year_month[] = date('Y-m', strtotime($date_value));
         }
@@ -38,34 +42,60 @@ Class VacantCalendar
         //リクエストされた年月からキーを特定　規定値の場合は0(デフォルト)
         if ($req_year_month !== 'default') {
             $req_year_month = str_replace('_', '-', $req_year_month);
-            $req_year_month_key = array_search($req_year_month,$clean_year_month);
+            $req_year_month_key = array_search($req_year_month, $clean_year_month);
         } else {
             $req_year_month_key = 0;
+        }
+
+        //日付用
+        foreach ($date_latest as $vacant_id => $vacant_date) {
+            $vacant[$vacant_id][date('Y-m', strtotime($vacant_date))] = date('d', strtotime($vacant_date));
+        }
+
+        //リクエストされてる年月の全空き日を、vacant_idをkeyとして取得
+        foreach ($vacant as $vacant_id => $vacant_ym) {
+            foreach ($vacant_ym as $vacant_year_month => $vacant_date) {
+                if ($clean_year_month[$req_year_month_key] == $vacant_year_month) {
+                    $req_vacant_id_date[$vacant_id] = $vacant_date;
+                }
+            }
         }
 
         //htmlの生成
         $td_count = 0;
         $html = '';
 
+        //aタグ
         for ($i = 1; $i <= $date_of_first_last[$clean_year_month[$req_year_month_key]]['last']; $i++) {
+            $if_vacant_link = '';
+            $close_a = '';
+
+            //dateと一致した場合にリンクON
+            foreach ($req_vacant_id_date as $vacant_id => $date) {
+                if ($i == $date) {
+                    $if_vacant_link = "<a href=" . route('vacant.show', ['id' => \Auth::user()->id, 'vacant' => $vacant_id]) . ">";
+                    $close_a = "</a>";
+                }
+            }
+
             if ($i == 1) {
                 switch ($date_of_first_last[$clean_year_month[$req_year_month_key]]['first']) {
                     case 'Mon':
                         $html =
-                            "<tr><td class=" . ++$td_count . ">$i</td>";
+                            "<tr><td class=" . ++$td_count . ">$if_vacant_link $i $close_a</td>";
                         break;
 
                     case 'Tue':
                         $html =
                             "<tr><td class=" . ++$td_count . "></td>
-                                 <td class=" . ++$td_count . ">$i</td>\n";
+                                 <td class=" . ++$td_count . ">$if_vacant_link $i $close_a</td>\n";
                         break;
 
                     case 'Wed':
                         $html =
                             "<tr><td class=" . ++$td_count . "></td>
                                  <td class=" . ++$td_count . "></td>
-                                 <td class=" . ++$td_count . ">$i</td>\n";
+                                 <td class=" . ++$td_count . ">$if_vacant_link $i $close_a</td>\n";
                         break;
 
                     case 'Thu':
@@ -73,7 +103,7 @@ Class VacantCalendar
                             "<tr><td class=" . ++$td_count . "></td>
                                  <td class=" . ++$td_count . "></td>
                                  <td class=" . ++$td_count . "></td>
-                                 <td class=" . ++$td_count . ">$i</td>\n";
+                                 <td class=" . ++$td_count . ">$if_vacant_link $i $close_a</td>\n";
                         break;
 
                     case 'Fri':
@@ -82,7 +112,7 @@ Class VacantCalendar
                                  <td class=" . ++$td_count . "></td>
                                  <td class=" . ++$td_count . "></td>
                                  <td class=" . ++$td_count . "></td>
-                                 <td class=" . ++$td_count . ">$i</td>\n";
+                                 <td class=" . ++$td_count . ">$if_vacant_link $i $close_a</td>\n";
                         break;
 
                     case 'Sat':
@@ -92,7 +122,7 @@ Class VacantCalendar
                                  <td class=\"" . ++$td_count . "\"></td>
                                  <td class=\"" . ++$td_count . "\"></td>
                                  <td class=\"" . ++$td_count . "\"></td>
-                                 <td class=\"" . ++$td_count . "\">$i</td>\n";
+                                 <td class=\"" . ++$td_count . "\">$if_vacant_link $i $close_a</td>\n";
                         break;
 
                     case 'Sun':
@@ -102,26 +132,52 @@ Class VacantCalendar
                                  <td class=\"" . ++$td_count . "\"></td>
                                  <td class=\"" . ++$td_count . "\"></td>
                                  <td class=\"" . ++$td_count . "\"></td>
-                                 <td class=\"" . ++$td_count . "\">$i</td>\n";
+                                 <td class=\"" . ++$td_count . "\">$if_vacant_link $i $close_a</td>\n";
                         break;
                 }
 
             } else {
                 if ($i == 2) {
                     $td_count++;
-
                 }
                 if ($i !== 1 && $td_count % 7 !== 0) {
-                    while ($td_count % 7 !== 0 && $i<= $date_of_first_last[$clean_year_month[$req_year_month_key]]['last']) {
-                        $html .= "<td class=\"" . $td_count . "\">$i</td>\n";
+                    while ($td_count % 7 !== 0 && $i <= $date_of_first_last[$clean_year_month[$req_year_month_key]]['last']) {
+
+                        //追加
+                        foreach ($req_vacant_id_date as $vacant_id => $date) {
+                            if ($i == $date) {
+                                $if_vacant_link = "<a href=" . route('vacant.show', ['id' => \Auth::user()->id, 'vacant' => $vacant_id]) . ">";
+                                $close_a = "</a>";
+                            }
+                        }
+
+                        $html .= "<td class=\"" . $td_count . "\">$if_vacant_link $i $close_a</td>\n";
                         $td_count++;
+
+                        //空き日リンクの初期化
+                        $if_vacant_link = '';
+                        $close_a = '';
+
                         if ($td_count % 7 !== 0) {
                             $i++;
                         }
                     }
                 } else if ($i !== 1 && $td_count % 7 == 0) {
-                    $html .= "<td class=\"" . $td_count . "\">$i</td>\n</tr>\n<tr>";
+
+                    //追加
+                    foreach ($req_vacant_id_date as $vacant_id => $date) {
+                        if ($i == $date) {
+                            $if_vacant_link = "<a href=" . route('vacant.show', ['id' => \Auth::user()->id, 'vacant' => $vacant_id]) . ">";
+                            $close_a = "</a>";
+                        }
+                    }
+
+                    $html .= "<td class=\"" . $td_count . "\">$if_vacant_link $i $close_a</td>\n</tr>\n<tr>";
                     ++$td_count;
+
+                    //初期化
+                    $if_vacant_link = '';
+                    $close_a = '';
                 }
             }
         }
@@ -130,13 +186,13 @@ Class VacantCalendar
         if ($req_year_month_key == 0) {
             $prev_key = 'no_link';
         } else {
-            $prev_key = $req_year_month_key-1;
+            $prev_key = $req_year_month_key - 1;
         }
 
-        if ($req_year_month_key == count($clean_year_month)-1) {
+        if ($req_year_month_key == count($clean_year_month) - 1) {
             $next_key = 'no_link';
         } else {
-            $next_key = $req_year_month_key+1;
+            $next_key = $req_year_month_key + 1;
         }
 
         $data['html'] = $html;

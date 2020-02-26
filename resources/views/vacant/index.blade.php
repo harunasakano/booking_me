@@ -20,10 +20,14 @@
                 </tbody>
             </table>
             @if (!empty($data['prev']))
-                <a href="{{ route('vacant.index',['id' => \Auth::user()->id])}}/{{  $data['prev'] }}"><div>prev</div></a>
+                <div class="prev_link">
+                    <a href="{{ route('vacant.index',['id' => \Auth::user()->id])}}/{{  $data['prev'] }}">prev</a>
+                </div>
             @endif
             @if (!empty($data['next']))
-                <a href="{{ route('vacant.index',['id' => \Auth::user()->id])}}/{{  $data['next'] }}"><div>next</div></a>
+                <div class="next_link">
+                    <a href="{{ route('vacant.index',['id' => \Auth::user()->id])}}/{{  $data['next'] }}">next</a>
+                </div>
             @endif
         </div>
     </div>

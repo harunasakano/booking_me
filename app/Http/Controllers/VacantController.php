@@ -21,7 +21,7 @@ class VacantController extends Controller
         $all_year_month = [];
         $vacant = Vacant::all();
 
-        $date_latest = $vacant->sortBy('date')->pluck('date');
+        $date_latest = $vacant->sortBy('date')->pluck('date','id');
         $vacant_calender = new VacantCalendar;
         $data = $vacant_calender->htmlExport($date_latest,$req_year_month);
 
