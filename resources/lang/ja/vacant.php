@@ -19,6 +19,7 @@ return [
     'status' => 'ステータス',
     'register_done' => '空き日を登録しました！',
     'update_done' => '空き日を更新しました！',
+    'delete_done' => '1件の空き日を削除しました',
     'show' => '空き日詳細',
     'edit' => '空き日編集',
     'edit_submit' => '編集する',

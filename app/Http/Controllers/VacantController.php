@@ -34,8 +34,7 @@ class VacantController extends Controller
      * @param Vacant $vacant
      * @return void
      */
-    public
-    function create(Vacant $vacant)
+    public function create(Vacant $vacant)
     {
         $vacant_status = Vacant::VACANT_STATUS;
         return view('vacant.create', compact('vacant', 'vacant_status'));
@@ -48,8 +47,7 @@ class VacantController extends Controller
      * @param Vacant $vacant
      * @return \Illuminate\Http\Response
      */
-    public
-    function store(Request $request, Vacant $vacant)
+    public function store(Request $request, Vacant $vacant)
     {
         $vacant_obj = $vacant->create([
             'date' => date('Y/m/d H:i D', (strtotime($request->date))),
@@ -59,7 +57,6 @@ class VacantController extends Controller
 
         $year_month_param = date('Y_m', strtotime($vacant_obj->date));
 
-        //TODO vacantのindexページが完成したら登録完了後はそこに飛ばす
         return redirect()->route('year_month_vacant', ['id' => Auth::user()->id, 'req_year_month' => $year_month_param])->with('my_status', __('vacant.register_done'));
     }
 
@@ -70,8 +67,7 @@ class VacantController extends Controller
      * @param $vacant_id
      * @return \Illuminate\Http\Response
      */
-    public
-    function show($user_id, $vacant_id)
+    public function show($user_id, $vacant_id)
     {
         $vacant = Vacant::find($vacant_id);
         return view('vacant.shows', compact('vacant'));
@@ -85,8 +81,7 @@ class VacantController extends Controller
      * @param $vacant_id
      * @return \Illuminate\Http\Response
      */
-    public
-    function edit(Request $request, $user_id, $vacant_id)
+    public function edit(Request $request, $user_id, $vacant_id)
     {
         $vacant_status = Vacant::VACANT_STATUS;
         $vacant = Vacant::find($vacant_id);
@@ -109,8 +104,7 @@ class VacantController extends Controller
      * @param $vacant_id
      * @return void
      */
-    public
-    function update(Request $request, $user_id, $vacant_id)
+    public function update(Request $request, $user_id, $vacant_id)
     {
         $updateObj = Vacant::find($vacant_id);
         $updateObj->date = $request->date;
@@ -118,19 +112,24 @@ class VacantController extends Controller
 
         $updateObj->save();
 
-        //TODO vacantのindexページが完成したら登録完了後はそこに飛ばす
-        return redirect()->route('year_month_vacant', ['id' => Auth::user()->id])->with('my_status', __('vacant.update_done'));
+        $year_month_param = date('Y_m', strtotime($updateObj->date));
+
+        return redirect()->route('year_month_vacant', ['id' => Auth::user()->id, 'req_year_month' => $year_month_param])->with('my_status', __('vacant.update_done'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param $user_id
+     * @param $vacant_id
+     * @return void
      */
-    public
-    function destroy($id)
+    public function destroy($user_id, $vacant_id)
     {
-        //
+        $deleteObj = Vacant::find($vacant_id);
+        $delete_date_message = $deleteObj->date;
+        $deleteObj->delete();
+
+        return redirect()->route('year_month_vacant', ['id' => Auth::user()->id])->with('my_status', $delete_date_message . " を、削除しました。");
     }
 }

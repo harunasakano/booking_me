@@ -6,7 +6,14 @@
         <div class="container">
 
             <div class="form-group">
-                <h2>{{ __('vacant.show') }}</h2>
+                <form action="{{ action('VacantController@destroy',['id' => \Auth::user()->id,'vacant' => $vacant->id ]) }}" id="form_{{ $vacant->id }}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('delete') }}
+                    <h2>{{ __('vacant.show') }}</h2>
+                <a href="#" data-id="{{ $vacant->id }}" onclick="deletePost(this);">
+                    <div class="delete-icon"><span></span></div>
+                </a>
+                </form>
             </div>
 
             <div class="form-group">
@@ -28,4 +35,13 @@
             </div>
         </div>
     </form>
+    <script>
+        function deletePost(e) {
+            'use strict';
+
+            if (confirm('この日を削除しますか?')) {
+                document.getElementById('form_' + e.dataset.id).submit();
+            }
+        }
+    </script>
 @endsection

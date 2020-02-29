@@ -54,9 +54,6 @@
         <script>
 
             $(function () {
-{{--                 @if (Session::has('vacant_date'))--}}
-{{--                    var defaultVacantDate = {!! Session::get("vacant_date") !!}--}}
-{{--                 @endif--}}
                 $('#my_datetimepicker').datetimepicker({
                     language: 'ja',
                     format: "YYYY/MM/DD HH:00",
