@@ -1,15 +1,13 @@
 /* vacant index parts css PC */
 
 .calendar {
-    position: absolute;
-    top: 100px;
     width: 70%;
-    left: 15%;
+    margin: 0 auto;
 }
 
 .next_link {
     display: inline-block;
-    float: right;
+    clear: both;
 }
 
 .prev_link {

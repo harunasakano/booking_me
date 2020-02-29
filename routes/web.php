@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('top.top');
 });
 
-Route::get('user/{id}/vacant/{req_year_month?}','VacantController@index')->where('req_year_month', '\d{4}_\d{2}');
+Route::get('user/{id}/vacant/{req_year_month?}','VacantController@index')->where('req_year_month', '\d{4}_\d{2}')->name('year_month_vacant');
 
 Route::resource('user', 'UserController');
 Route::resource('user/{id}/vacant', 'VacantController')->middleware('auth');

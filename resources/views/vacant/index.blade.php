@@ -2,6 +2,9 @@
 @section('content')
     <div class="container">
         <div class="calendar">
+            <div class="status_message">
+                {{ session('my_status') }}
+            </div>
             <table class="table">
                 <h5 class="">{{ $data['head'] }}</h5>
                 <thead>
@@ -21,12 +24,12 @@
             </table>
             @if (!empty($data['prev']))
                 <div class="prev_link">
-                    <a href="{{ route('vacant.index',['id' => \Auth::user()->id])}}/{{  $data['prev'] }}">prev</a>
+                    <a href="{{ route('vacant.index',['id' => \Auth::user()->id])}}/{{  $data['prev'] }}">Back</a>
                 </div>
             @endif
             @if (!empty($data['next']))
                 <div class="next_link">
-                    <a href="{{ route('vacant.index',['id' => \Auth::user()->id])}}/{{  $data['next'] }}">next</a>
+                    <a href="{{ route('vacant.index',['id' => \Auth::user()->id])}}/{{  $data['next'] }}">Next</a>
                 </div>
             @endif
         </div>

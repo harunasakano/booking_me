@@ -16,7 +16,7 @@ class CreateVacantTable extends Migration
         Schema::create('vacant', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->string('date');
+            $table->string('date')->unique();
             $table->string('status');
 
             $table->foreign('user_id')

@@ -21,11 +21,11 @@ class VacantController extends Controller
         $all_year_month = [];
         $vacant = Vacant::all();
 
-        $date_latest = $vacant->sortBy('date')->pluck('date','id');
+        $date_latest = $vacant->sortBy('date')->pluck('date', 'id');
         $vacant_calender = new VacantCalendar;
-        $data = $vacant_calender->htmlExport($date_latest,$req_year_month);
+        $data = $vacant_calender->htmlExport($date_latest, $req_year_month);
 
-        return view('vacant.index', compact('vacant', 'date_latest','data','year_month'));
+        return view('vacant.index', compact('vacant', 'date_latest', 'data', 'year_month'));
     }
 
     /**
@@ -51,15 +51,16 @@ class VacantController extends Controller
     public
     function store(Request $request, Vacant $vacant)
     {
-
-        $vacant->create([
+        $vacant_obj = $vacant->create([
             'date' => date('Y/m/d H:i D', (strtotime($request->date))),
             'status' => $request->status,
             'user_id' => Auth::user()->id,
         ]);
 
+        $year_month_param = date('Y_m', strtotime($vacant_obj->date));
+
         //TODO vacantのindexページが完成したら登録完了後はそこに飛ばす
-        return redirect()->route('user.show', ['user' => Auth::user()->id])->with('my_status', __('vacant.register_done'));
+        return redirect()->route('year_month_vacant', ['id' => Auth::user()->id, 'req_year_month' => $year_month_param])->with('my_status', __('vacant.register_done'));
     }
 
     /**
@@ -79,15 +80,23 @@ class VacantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param Request $request
      * @param $user_id
      * @param $vacant_id
      * @return \Illuminate\Http\Response
      */
     public
-    function edit($user_id, $vacant_id)
+    function edit(Request $request, $user_id, $vacant_id)
     {
         $vacant_status = Vacant::VACANT_STATUS;
         $vacant = Vacant::find($vacant_id);
+
+        if ($request->session()->has('vacant_date')) {
+            $request->session()->forget('vacant_date');
+        }
+
+        $vacant_old_date = rtrim(preg_replace('/[a-zA-Z]/', '', $vacant->date));
+        $request->session()->put('vacant_old_date', $vacant_old_date);
 
         return view('vacant.edit', compact('vacant', 'vacant_status'));
     }
@@ -103,16 +112,14 @@ class VacantController extends Controller
     public
     function update(Request $request, $user_id, $vacant_id)
     {
+        $updateObj = Vacant::find($vacant_id);
+        $updateObj->date = $request->date;
+        $updateObj->status = $request->status;
 
-        Vacant::where('id', $vacant_id)
-            ->update
-            ([
-                'date' => $request->date,
-                'status' => $request->status,
-            ]);
+        $updateObj->save();
 
         //TODO vacantのindexページが完成したら登録完了後はそこに飛ばす
-        return redirect()->route('user.show', ['user' => Auth::user()->id])->with('my_status', __('vacant.update_done'));
+        return redirect()->route('year_month_vacant', ['id' => Auth::user()->id])->with('my_status', __('vacant.update_done'));
     }
 
     /**

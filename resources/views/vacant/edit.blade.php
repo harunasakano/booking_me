@@ -52,16 +52,21 @@
 
         </div>
         <script>
+
             $(function () {
+{{--                 @if (Session::has('vacant_date'))--}}
+{{--                    var defaultVacantDate = {!! Session::get("vacant_date") !!}--}}
+{{--                 @endif--}}
                 $('#my_datetimepicker').datetimepicker({
-                    format: 'YYYY年MM月DD日HH時',
-                    autoclose: true,
                     language: 'ja',
+                    format: "YYYY/MM/DD HH:00",
+                    autoclose: true,
                     sideBySide: true,
                     minDate: new Date(),
-                    defaultDate: moment('{{$vacant->date}}', 'YYYY年MM月DD日HH時'),
+                    defaultDate: "{{ Session::get("vacant_old_date") }}",
                 });
             });
+
         </script>
     </form>
 @endsection
