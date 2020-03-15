@@ -23,3 +23,5 @@ Route::get('user/{id}/vacant/{req_year_month?}','VacantController@index')->where
 
 Route::resource('user', 'UserController');
 Route::resource('user/{id}/vacant', 'VacantController')->middleware('auth');
+
+Route::resource('user/{id}/share_url', 'UserVacantShareUrlController', ['except' => ['show']]);
