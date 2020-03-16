@@ -15,7 +15,7 @@ class CreateUserVacantShareUrlsTable extends Migration
     {
         Schema::create('user_vacant_share_urls', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('url');
+            $table->string('url')->unique();
             $table->string('status');
             $table->unsignedBigInteger('user_id');
 

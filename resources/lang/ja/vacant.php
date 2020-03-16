@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     'main' => '空き日',
     'vacant' => '空き日登録',
     'submit' => '登録',

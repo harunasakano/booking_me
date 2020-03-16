@@ -30,7 +30,7 @@
             </div>
 
             <div class="form-group">
-                <label class="my-1 mr-2" for="status_form">{{ __('vacant.status') }}</label>
+                <label class="my-1 mr-2" for="status_form">{{ __('user_share.status') }}</label>
                 <select class="custom-select" name="status" id="status_form">
                     @foreach( $vacant_status as $status_word)
                         <option value={{ $status_word }}>{{ $status_word }}</option>

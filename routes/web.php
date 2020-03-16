@@ -19,9 +19,9 @@ Route::get('/', function () {
     return view('top.top');
 });
 
-Route::get('user/{id}/vacant/{req_year_month?}','VacantController@index')->where('req_year_month', '\d{4}_\d{2}')->name('year_month_vacant');
+Route::get('user/{id}/vacant/{req_year_month?}','VacantController@index')->where('req_year_month', '\d{4}_\d{2}')->name('year_month_vacant')->middleware('auth');
 
 Route::resource('user', 'UserController');
 Route::resource('user/{id}/vacant', 'VacantController')->middleware('auth');
 
-Route::resource('user/{id}/share_url', 'UserVacantShareUrlController', ['except' => ['show']]);
+Route::resource('user/{id}/share_url', 'UserVacantShareUrlController', ['except' => ['show']])->middleware('auth');
