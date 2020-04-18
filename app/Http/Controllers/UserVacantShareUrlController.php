@@ -60,25 +60,17 @@ class UserVacantShareUrlController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param $user_id
+     * @param $share_url_id
+     * @return void
      */
-    public function edit($id)
+    public function edit($user_id,$share_url_id)
     {
-        //
+        $share_url_status = UserVacantShareUrl::SHARE_URL_STATUS;
+        $user_vacant_share_url = UserVacantShareUrl::find($share_url_id);
+        return view('share_url.edit',compact('user_vacant_share_url','share_url_status'));
     }
 
     /**
@@ -90,17 +82,21 @@ class UserVacantShareUrlController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //TODO そのうち更新のやつも書く
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param $user_id
+     * @param $share_url_id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($user_id, $share_url_id)
     {
-        //
+        $deleteObj = UserVacantShareUrl::find($share_url_id);
+        $deleteObj->delete();
+
+        return redirect()->route('user.show', ['user' => Auth::user()->id])->with('my_status',"共有URLを削除しました。");
     }
 }

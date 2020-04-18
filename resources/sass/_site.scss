@@ -9,6 +9,8 @@
     @import "PC/vacant_create";
     @import "PC/vacant_shows";
     @import "PC/vacant_index";
+
+    @import "PC/share_url_edit";
 }
 
 @media screen and (max-width: 767px) /*ウィンドウ幅が767px以下の場合に適用*/
@@ -22,4 +24,6 @@
     @import "SP/vacant_create";
     @import "SP/vacant_shows";
     @import "SP/vacant_index";
+
+    @import "SP/share_url_edit";
 }

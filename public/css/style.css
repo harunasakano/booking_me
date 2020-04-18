@@ -16,6 +16,8 @@
   /* vacant shows parts css PC */
 
   /* vacant index parts css PC */
+
+  /* share_url edit parts css PC */
 }
 
 @media screen and (min-width: 767px) and (min-width: 767px) {
@@ -323,6 +325,44 @@
   }
 }
 
+@media screen and (min-width: 767px) {
+  .form-group h3 {
+    display: inline-block;
+  }
+
+  .form-group .delete-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group .delete-icon span::before,
+  .form-group .delete-icon span::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 84%;
+    height: 16%;
+    margin: -8% 0 0 -42%;
+    background: gray;
+  }
+
+  .form-group .delete-icon span::before {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+
+  .form-group .delete-icon span::after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
 @media screen and (max-width: 767px) {
   /* header css  SP用 */
 
@@ -622,6 +662,44 @@
 
   .prev_link {
     display: inline-block;
+  }
+
+  /* share_url edit parts css css SP */
+
+  .form-group h3 {
+    display: inline-block;
+  }
+
+  .form-group .delete-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group .delete-icon span::before,
+  .form-group .delete-icon span::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 84%;
+    height: 16%;
+    margin: -8% 0 0 -42%;
+    background: gray;
+  }
+
+  .form-group .delete-icon span::before {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+
+  .form-group .delete-icon span::after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
   }
 }
 
