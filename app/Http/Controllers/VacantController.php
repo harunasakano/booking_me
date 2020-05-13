@@ -111,7 +111,6 @@ class VacantController extends Controller
         $updateObj->status = $request->status;
 
         $updateObj->save();
-
         $year_month_param = date('Y_m', strtotime($updateObj->date));
 
         return redirect()->route('year_month_vacant', ['id' => Auth::user()->id, 'req_year_month' => $year_month_param])->with('my_status', __('vacant.update_done'));

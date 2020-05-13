@@ -60,32 +60,6 @@ class UserVacantShareUrlController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param $user_id
-     * @param $share_url_id
-     * @return void
-     */
-    public function edit($user_id,$share_url_id)
-    {
-        $share_url_status = UserVacantShareUrl::SHARE_URL_STATUS;
-        $user_vacant_share_url = UserVacantShareUrl::find($share_url_id);
-        return view('share_url.edit',compact('user_vacant_share_url','share_url_status'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //TODO そのうち更新のやつも書く
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param $user_id

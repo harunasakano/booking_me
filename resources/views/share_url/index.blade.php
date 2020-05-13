@@ -5,7 +5,7 @@
 @endsection
 @section('content')
     @csrf
-    <form method="GET" action="{{ route('share_url.edit',['id' => \Auth::user()->id,'share_url' => $user_vacant_share_url->id ])}}" autocomplete="off">
+    <form method="GET" action="{{ route('share_url.destroy',['id' => \Auth::user()->id,'share_url' => $user_vacant_share_url->id ])}}" autocomplete="off">
         <div class="container">
             <div class="form-group">
                 <h3>{{ Auth::user()->name }}さんの共有用URL</h3>
@@ -26,9 +26,9 @@
             </div>
 
             <div class="form-group">
-                <a href={{ route('share_url.edit',['id' => \Auth::user()->id,'share_url' => $user_vacant_share_url->id])}}>
+                <a href={{ route('share_url.destroy',['id' => \Auth::user()->id,'share_url' => $user_vacant_share_url->id])}}>
                     <button type="button" class="btn btn-primary my-1">
-                        {{ __('vacant.edit_submit') }}
+                        {{ __('vacant.destroy_submit') }}
                     </button>
                 </a>
             </div>

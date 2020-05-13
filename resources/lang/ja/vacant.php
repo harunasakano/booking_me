@@ -10,7 +10,7 @@ return [
     'delete_done' => '1件の空き日を削除しました',
     'show' => '空き日詳細',
     'edit' => '空き日編集',
-    'edit_submit' => '編集する',
+    'destroy_submit' => '削除する',
     'update_submit' => '更新する',
     'updated_at' => '更新日',
 ];
