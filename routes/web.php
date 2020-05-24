@@ -34,3 +34,4 @@ Route::resource('user/{id}/share_url', 'UserVacantShareUrlController', ['except'
 //ゲストが特定の共有用URLから空き日を閲覧するURL
 //マッチする条件とミドルウェアを書く認証が通ったら、セッションにuser情報を格納する
 Route::get('guest/{param}', 'BookingController@show');
+Route::get('guest/{param}/{req_year_month?}', 'BookingController@show')->where('req_year_month', '\d{4}_\d{2}')->name('guest.vacant');
