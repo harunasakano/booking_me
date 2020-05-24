@@ -23,7 +23,7 @@ Route::get('/', function () {
 Route::resource('user', 'UserController')->middleware('auth');
 
 //空き日月日の表示 注：空き日routingより下にこのroutingを持っていくと動かなくなります。
-Route::get('user/{id}/vacant/{req_year_month?}','VacantController@index')->where('req_year_month', '\d{4}_\d{2}')->name('year_month_vacant')->middleware('auth');
+Route::get('user/{id}/vacant/{req_year_month?}','VacantController@index')->where('req_year_month', '\d{4}_\d{2}')->name('year_month_vacant')->middleware('vacant_list');
 
 //空き日
 Route::resource('user/{id}/vacant', 'VacantController')->middleware('auth');
@@ -34,5 +34,3 @@ Route::resource('user/{id}/share_url', 'UserVacantShareUrlController', ['except'
 //ゲストが特定の共有用URLから空き日を閲覧するURL
 //マッチする条件とミドルウェアを書く認証が通ったら、セッションにuser情報を格納する
 Route::get('guest/{param}', 'BookingController@show');
-
-//Route::resource('guest', 'BookingController');

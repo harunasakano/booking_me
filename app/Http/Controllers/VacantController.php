@@ -18,9 +18,7 @@ class VacantController extends Controller
      */
     public function index($user_id, $req_year_month = 'default')
     {
-        $all_year_month = [];
-        $vacant = Vacant::all();
-
+        $vacant = Vacant::where('user_id','=',$user_id)->get();
         $date_latest = $vacant->sortBy('date')->pluck('date', 'id');
         $vacant_calender = new VacantCalendar;
         $data = $vacant_calender->htmlExport($date_latest, $req_year_month);

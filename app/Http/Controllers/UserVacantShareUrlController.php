@@ -46,7 +46,8 @@ class UserVacantShareUrlController extends Controller
      */
     public function store(Request $request)
     {
-        $share_url = substr(base_convert(hash('sha256', uniqid()), 16, 36), 0, 48);
+        $share_url = substr(bin2hex(random_bytes(50)), 0, 50);
+
         $share_url_status = UserVacantShareUrl::SHARE_URL_STATUS;
         $status = array_search($request->status, $share_url_status);
 

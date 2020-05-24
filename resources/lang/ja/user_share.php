@@ -5,5 +5,5 @@ return [
     'submit' => 'URLを発行する',
     'status' => '共有用URLのステータス設定',
     'exit_url' =>'共有用URL',
-    'updated_at' => '更新日',
+    'created_at' => '作成日',
 ];

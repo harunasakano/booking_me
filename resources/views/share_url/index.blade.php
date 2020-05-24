@@ -15,18 +15,12 @@
         </div>
 
         <div class="form-group">
-            <label class="my-1 mr-2">{{ __('user_share.status') }}</label>
-            <p>{{ $share_url_status[$user_vacant_share_url->status] }}</p>
-        </div>
-
-        <div class="form-group">
-            <label class="my-1 mr-2">{{ __('user_share.updated_at') }}</label>
+            <label class="my-1 mr-2">{{ __('user_share.created_at') }}</label>
             <p>{{ $user_vacant_share_url->updated_at }}</p>
         </div>
 
         <div class="form-group">
-            <form
-                action="{{ action('UserVacantShareUrlController@destroy',['id' => \Auth::user()->id,'share_url' => $user_vacant_share_url->id ])}}"
+            <form action="{{ action('UserVacantShareUrlController@destroy',['id' => \Auth::user()->id,'share_url' => $user_vacant_share_url->id ])}}"
                 id="form_{{ $user_vacant_share_url->id }}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('delete') }}
